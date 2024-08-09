@@ -11,8 +11,10 @@ function cityWeather(response) {
     event.preventDefault();
     let searchInputElement = document.querySelector("#search-input");
     let city = searchInputElement.value;
+
     let apiKey = "7f9d9cf0474030cet59a45f7coc640b0";
     let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    
     axios.get(apiURL).then(cityWeather);
   }
   
@@ -44,7 +46,7 @@ function cityWeather(response) {
   }
   
   let searchForm = document.querySelector("#search-form");
-  searchForm.addEventListener("submit", cityWeather);
+  searchForm.addEventListener("submit", search);
   
   let currentDateELement = document.querySelector("#current-date");
   let currentDate = new Date();
